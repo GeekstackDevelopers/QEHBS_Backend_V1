@@ -8,6 +8,7 @@ import os from "os";
 import { IlearningENV } from "../../config/env.config";
 import { adminApiPath } from "../../shared/constant/constant";
 import adminAuthRouter from "../../interface/route/admin/admin.auth.route";
+import { ErrorHandler } from "../../interface/middleware/error.middelware";
 const createApp = () => {
   const app: Application = express();
 
@@ -87,6 +88,7 @@ const createApp = () => {
 
   app.use(adminApiPath.base, adminAuthRouter);
 
+  app.use(ErrorHandler.handleErrors);
 
   return app;
 };
