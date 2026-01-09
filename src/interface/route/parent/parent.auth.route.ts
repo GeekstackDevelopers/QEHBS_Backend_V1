@@ -22,4 +22,9 @@ parentAuthRouter.post(
 )
 
 
+parentAuthRouter.post(
+    parentApiPath.auth.signup,
+    parentAuthCon.singup.bind(parentAuthCon)
+)
+
 export default parentAuthRouter
