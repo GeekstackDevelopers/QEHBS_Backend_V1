@@ -59,7 +59,6 @@ export class JWTService implements IJWTService {
 
 
     private getSecret(tokenType: TokenType) {
-
         const cfg = (IlearningENV.jwt as any)[tokenType];
         if (!cfg || !cfg.secret) {
             throw new CustomError(HTTPStatusCode.INTERNAL_SERVER_ERROR, `JWT secret not configured for ${tokenType}`);

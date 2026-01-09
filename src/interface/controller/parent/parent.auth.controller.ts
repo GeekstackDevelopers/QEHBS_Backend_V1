@@ -14,6 +14,9 @@ export class ParentAuthController {
     login = asynchandler(async (req: Request, res: Response) => {
         const { email, password } = req.body
 
+        console.log("email", email);
+        console.log("password", password);
+
         const response = await this.parentAuthUseCase.login(email,password)
 
         res.status(200).json(response)
@@ -21,9 +24,9 @@ export class ParentAuthController {
 
     singup = asynchandler (async (req: Request , res: Response)=>{
 
-         const {email,password,name,surname} = req.body
+         const {email,password,firstName,surname} = req.body
          
-            const response = await this.parentAuthUseCase.singup(email,password,name,surname)
+            const response = await this.parentAuthUseCase.singup(email,password,firstName,surname)
          res.status(201).json(response)
     })
 

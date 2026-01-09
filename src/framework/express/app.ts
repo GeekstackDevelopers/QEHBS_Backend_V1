@@ -19,7 +19,7 @@ const createApp = () => {
       credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
       origin: [
-        "http://localhost:5173",
+        "http://localhost:3000",
         IlearningENV.origin.origin_1,
         IlearningENV.origin.origin_2,
         IlearningENV.origin.origin_3,
