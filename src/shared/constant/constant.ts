@@ -63,7 +63,7 @@ export const parentApiPath = Object.freeze({
     auth: {
         base: "/auth",
         login: "/login",
-        signup:"/signup"
+        signup:"/sign-up"
     }
 })
 
