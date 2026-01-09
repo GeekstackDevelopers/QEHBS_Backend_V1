@@ -8,3 +8,7 @@ const adminRouter = Router()
 
 
 adminRouter.use(adminApiPath.auth.base,adminAuthRouter)
+
+
+
+export default adminRouter

@@ -6,9 +6,11 @@ import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import os from "os";
 import { IlearningENV } from "../../config/env.config";
-import { adminApiPath } from "../../shared/constant/constant";
+import { adminApiPath, parentApiPath } from "../../shared/constant/constant";
 import adminAuthRouter from "../../interface/route/admin/admin.auth.route";
 import { ErrorHandler } from "../../interface/middleware/error.middelware";
+import parentRouter from "../../interface/route/parent";
+import adminRouter from "../../interface/route/admin";
 const createApp = () => {
   const app: Application = express();
 
@@ -86,7 +88,8 @@ const createApp = () => {
     }
   });
 
-  app.use(adminApiPath.base, adminAuthRouter);
+  app.use(adminApiPath.base, adminRouter);
+  app.use(parentApiPath.base, parentRouter)
 
   app.use(ErrorHandler.handleErrors);
 

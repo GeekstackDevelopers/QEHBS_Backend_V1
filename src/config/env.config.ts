@@ -1,5 +1,6 @@
 
 import dotenv from "dotenv"
+import { TokenType } from "../shared/constant/constant";
 dotenv.config();
 
 
@@ -19,5 +20,28 @@ export const IlearningENV = Object.freeze({
     mail:{
         user:process.env.APP_MAIL_USER!,
         password:process.env.APP_MAIL_PASSWORD!,
-    }
+    },
+    jwt: {
+        [TokenType.ACCESS]: {
+            secret: process.env.JWT_ACCESS_SECRET!,
+            expire: process.env.JWT_ACCESS_EXPIRE!
+        },
+        [TokenType.REFRESH]: {
+            secret: process.env.JWT_REFRESH_SECRET!,
+            expire: process.env.JWT_REFRESH_EXPIRE!
+        },
+        [TokenType.ADMIN_ACCESS]: {
+            secret: process.env.JWT_ACCESS_SECRET!,
+            expire: process.env.JWT_ACCESS_EXPIRE!
+        },
+        [TokenType.ADMIN_REFRESH]: {
+           secret: process.env.JWT_REFRESH_SECRET!,
+            expire: process.env.JWT_REFRESH_EXPIRE!
+        },
+        [TokenType.PARENT_ACCESS]: {
+            secret: process.env.JWT_ACCESS_SECRET!,
+            expire: process.env.JWT_ACCESS_EXPIRE!
+         },
+        
+    },
 })
