@@ -3,7 +3,7 @@ import { IParent } from "../entity/parent";
 
 const ParentSchema = new Schema<IParent>(
   {
-    name: { type: String, required: true },
+    firstName: { type: String, required: true },
     surname: { type: String, required: true },
     email: {
       type: String,
@@ -14,11 +14,9 @@ const ParentSchema = new Schema<IParent>(
     password: {
       type: String,
       required: true,
-      select: false,
     },
     phone: {
       type: String,
-      required: true,
       unique: true,
     },
   },

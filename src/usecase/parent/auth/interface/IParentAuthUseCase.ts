@@ -3,8 +3,15 @@ import { IApiResponse } from "../../../../shared/constant/constant";
 
 
 export interface ParentLoginResponse extends IApiResponse {
-    token:string,
-    parent:IParent
+    accessToken: string,
+    refreshToken: string,
+    parent: IParent
+}
+
+export interface IParentSignupResponse extends IApiResponse {
+    accessToken: string,
+    refreshToken?: string,
+    parent: IParent
 }
 
 export interface IParentAuthUseCase {
