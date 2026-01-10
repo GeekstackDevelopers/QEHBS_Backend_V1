@@ -51,11 +51,29 @@ export interface IApiResponse {
 
 export const adminApiPath = Object.freeze({
     base: '/api/admin',
+    course: {
+        base: "/course",
+        create: "/create"
+    },
+    quiz: {
+        base: "/quiz",
+        create: "/create"
+    },
     auth: {
         base: "/auth",
         login: "/login"
     }
 })
+
+export const superAdminPath = Object.freeze({
+    base: '/api/super-admin',
+    admin: {
+        create: "/create-admin",
+        base: "/admin",
+    }
+})
+
+
 
 
 export const parentApiPath = Object.freeze({

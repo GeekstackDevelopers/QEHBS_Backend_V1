@@ -17,7 +17,6 @@ const ParentSchema = new Schema<IParent>(
     },
     phone: {
       type: String,
-      unique: true,
     },
   },
   { timestamps: true }
