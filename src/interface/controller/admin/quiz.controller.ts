@@ -6,8 +6,15 @@ export class QuizController {
     constructor(private quizUsecase: IQuizUseCase) {}
 
     createQuiz = asyncHandler(async (req: Request, res: Response) => {
-        const response = await this.quizUsecase.createQuiz(req.body);
+        const file = req.file;
+        const response = await this.quizUsecase.createQuiz(req.body, file);
         res.status(201).json(response);
+    });
+
+    getQuizById = asyncHandler(async (req: Request, res: Response) => {
+        const { id } = req.params;
+        const response = await this.quizUsecase.getQuizById(id);
+        res.status(200).json(response);
     });
 
     getQuizzesByCourseId = asyncHandler(async (req: Request, res: Response) => {

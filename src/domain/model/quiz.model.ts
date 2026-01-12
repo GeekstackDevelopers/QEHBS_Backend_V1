@@ -15,6 +15,12 @@ const quizSchema = new Schema<IQuiz>(
       required: true,
       trim: true,
     },
+    
+    category: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
     description: {
       type: String,
@@ -40,15 +46,17 @@ const quizSchema = new Schema<IQuiz>(
       min: 1,
     },
 
+    thumbnailImage: {
+      type: String,
+      required: true,
+    },
+
     totalQuestions: {
       type: Number,
-      required: true,
-      min: 1,
     },
 
     marksPerQuestion: {
       type: Number,
-      required: true,
       min: 1,
     },
 

@@ -1,4 +1,5 @@
 import { JwtPayload } from "jsonwebtoken";
+import mongoose from "mongoose";
 
 export enum HTTPStatusCode {
     OK = 200,
@@ -62,6 +63,10 @@ export const adminApiPath = Object.freeze({
     auth: {
         base: "/auth",
         login: "/login"
+    },
+    question: {
+        base: "/quiz-question",
+        create: "/create"
     }
 })
 
@@ -93,3 +98,11 @@ export const studentApiPath = Object.freeze({
         login: "/login"
     }
 })
+
+
+
+// UTILS
+// Convert string to mongoose ObjectId
+export function convertStringToObjectId(id: any): mongoose.Types.ObjectId {
+  return new mongoose.Types.ObjectId(id) as mongoose.Types.ObjectId;
+}

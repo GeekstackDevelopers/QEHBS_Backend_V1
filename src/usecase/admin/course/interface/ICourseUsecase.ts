@@ -1,4 +1,3 @@
-// src/domain/usecases/course.usecase.interface.ts
 import { ICourse } from "../../../../domain/entity/course";
 import { IApiResponse } from "../../../../shared/constant/constant";
 export interface ICoursesReponse extends IApiResponse {

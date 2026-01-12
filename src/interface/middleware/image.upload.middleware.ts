@@ -63,7 +63,8 @@ export const uploadMultipleImages = async (files: any[], folderName: string) => 
 };
 
 // Multer middleware
-export const courseCoverImageUpload = upload.single("coverImage")
+export const courseCoverImageUpload = upload.single("coverImage");
+export const quizThumbnailImageUpload = upload.single(" ");
 export const manualOrderListImageUpload = upload.array("manualOrderImage",4)
 export const deliveryPartnerDocumentUpload = upload.fields([
   { name: "profileImage", maxCount: 1 },

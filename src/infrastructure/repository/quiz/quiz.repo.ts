@@ -8,6 +8,11 @@ export class QuizRepository implements IQuizRepository {
         return newQuiz;
     }
 
+    async getQuizById(quizId: string): Promise<IQuiz | null> {
+        const quiz = await QuizModel.findById(quizId);
+        return quiz;
+    }
+
     async getQuizzesByCourseId(courseId: string): Promise<IQuiz[]> {
         const quizzes = await QuizModel.find({ courseId });
         return quizzes;

@@ -44,7 +44,6 @@ const questionSchema = new Schema<IQuestion>(
     },
     correctOption: {
       type: String,
-      select: false,
       required: true,
     },
   },
