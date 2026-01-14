@@ -47,6 +47,16 @@ export class CourseUseCase implements ICourseUseCase {
     };
   }
 
+  async findByAgeGroup(ageGroup: string): Promise<ICoursesReponse> {
+    const course = await this.courseRepo.findByYear(ageGroup);
+
+    return {
+      courses: course,
+      msg: "Course fetched successfully",
+      success: true,
+    };
+  }
+
   async getCourseById(courseId: string): Promise<ICourseReponse> {
     const course = await this.courseRepo.findById(courseId);
 

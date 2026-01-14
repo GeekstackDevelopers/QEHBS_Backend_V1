@@ -10,6 +10,7 @@ export interface ICourseReponse extends IApiResponse {
 export interface ICourseUseCase {
   createCourse(data: Partial<ICourse>, file?: any): Promise<ICourseReponse>;
   getAllCourses(filter?: Partial<ICourse>): Promise<ICoursesReponse>;
+  findByAgeGroup(ageGroup: string): Promise<ICoursesReponse>;
   getCourseById(courseId: string): Promise<ICourseReponse>;
   updateCourse(courseId: string, data: Partial<ICourse>): Promise<ICourseReponse>;
   deleteCourse(courseId: string): Promise<void>;

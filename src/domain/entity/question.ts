@@ -8,4 +8,5 @@ export interface IQuestion {
   }[];
   quizId: Types.ObjectId;
   correctOption: string;
+  explanation: string;
 }

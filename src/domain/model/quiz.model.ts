@@ -68,7 +68,7 @@ const quizSchema = new Schema<IQuiz>(
 
     isPublished: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
   {

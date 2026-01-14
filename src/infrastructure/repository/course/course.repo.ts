@@ -16,6 +16,12 @@ export class CourseRepository implements ICourseRepository {
     return await CourseModel.find(filter).sort({ createdAt: -1 });
   }
 
+
+
+  async findByYear(ageGroup: string): Promise<ICourse[]> {
+    return await CourseModel.find({ageGroup });
+  }
+
   async updateById(
     id: string,
     data: Partial<ICourse>

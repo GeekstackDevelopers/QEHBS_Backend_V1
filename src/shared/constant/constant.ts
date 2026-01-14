@@ -41,6 +41,7 @@ export enum TokenType {
     ADMIN_REFRESH = "Admin_Refresh",
     ADMIN_ACCESS = "Admin_Access",
     PARENT_ACCESS = "Parent_Access",
+    STUDENT_ACCESS = "Student_Access",
     PARENT_REFRESH = "Parent_Refresh",
 }
 
@@ -55,6 +56,13 @@ export const adminApiPath = Object.freeze({
     course: {
         base: "/course",
         create: "/create"
+    },
+    slots: {
+        base: "/slot",
+        create: "/create"
+    },
+    student: {
+        base: "/student",
     },
     quiz: {
         base: "/quiz",
@@ -87,6 +95,16 @@ export const parentApiPath = Object.freeze({
         base: "/auth",
         login: "/login",
         signup:"/sign-up"
+    },
+    slot: {
+        base: "/slot"
+    },
+    student: {
+        base: "/student",
+        create: "/create"
+    },
+    course: {
+        base: "/course"
     }
 })
 
@@ -96,7 +114,17 @@ export const studentApiPath = Object.freeze({
     auth: {
         base: "/auth",
         login: "/login"
+    },
+    class: {
+        base: "/class",
+    },
+    quiz: {
+        base: "/quiz",
+    },
+    question: {
+        base: "/quiz-question",
     }
+
 })
 
 

@@ -1,4 +1,4 @@
-import { ICourseUseCase } from "../../../usecase/admin/course/interface/ICourseUsecase";
+import { ICourseUseCase } from "../../../usecase/shared/course/interface/ICourseUsecase";
 import { Request, Response } from "express";
 import asynchandler from "express-async-handler";
 
