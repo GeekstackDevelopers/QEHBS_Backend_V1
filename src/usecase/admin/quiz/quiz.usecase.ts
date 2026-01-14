@@ -42,6 +42,27 @@ export class QuizUseCase implements IQuizUseCase {
     };
   }
 
+  async getAllQuizes(): Promise<IQuizzesReponse> {
+    const quizzes = await this.quizRepository.getAllQuizzes();
+    return {
+      quizzes,
+      msg: "Quizzes fetched successfully",
+      success: true,
+    };
+  }
+
+  async publishQuiz(quizId: string): Promise<IQuizResponse> {
+    const quiz = await this.quizRepository.publishQuiz(quizId);
+    if(!quiz){
+      throw new CustomError(404,"Quiz not found");
+    }
+    return {
+      quiz,
+      msg: "Quiz published successfully",
+      success: true,
+    }
+  }
+
   async getQuizById(quizId: string): Promise<IQuizResponse> {
     if (!quizId) {
       throw new CustomError(400,"Quiz ID is required");

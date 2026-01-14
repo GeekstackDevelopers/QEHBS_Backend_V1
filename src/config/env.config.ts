@@ -39,6 +39,10 @@ export const IlearningENV = Object.freeze({
       secret: process.env.JWT_ACCESS_SECRET!,
       expire: process.env.JWT_ACCESS_EXPIRE!,
     },
+    [TokenType.STUDENT_ACCESS]: {
+      secret: process.env.JWT_ACCESS_SECRET!,
+      expire: process.env.JWT_ACCESS_EXPIRE!,
+    },
     [TokenType.PARENT_REFRESH]: {
       secret: process.env.JWT_ACCESS_SECRET!,
       expire: process.env.JWT_ACCESS_EXPIRE!,

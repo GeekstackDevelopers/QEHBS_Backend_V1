@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { adminApiPath } from "../../../shared/constant/constant";
 import { CourseController } from "../../controller/admin/course.controller";
-import { CourseUseCase } from "../../../usecase/admin/course/course.usecase";
+import { CourseUseCase } from "../../../usecase/shared/course/course.usecase";
 import { CourseRepository } from "../../../infrastructure/repository/course/course.repo";
 import { courseCoverImageUpload } from "../../middleware/image.upload.middleware";
 

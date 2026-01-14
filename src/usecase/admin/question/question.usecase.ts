@@ -30,11 +30,37 @@ export class QuestionUsecase implements IQuestionUsecase {
         }
     }
 
+    async updateQuestion(questionId: string, question: Partial<IQuestion>): Promise<IQuestionResponse> {
+        const updatedQuestion = await this.questionRepo.update(questionId, question);
+
+        if (!updatedQuestion) {
+            throw new CustomError(404, "Question not found");
+        }
+        return {
+            question: updatedQuestion,
+            msg: "Question updated successfully",
+            success: true,
+        }
+    }
+
     async getByQuizId(quizId: string): Promise<IQuestionsResponse> {
         const questions = await this.questionRepo.findByQuizId(quizId);
         return {
             questions,
             msg: "Questions fetched successfully",
+            success: true,
+        }
+    }
+
+    async deleteQuestion(questionId: string): Promise<IQuestionResponse> {
+        const deletedQuestion = await this.questionRepo.deleteQuestion(questionId);
+
+        if (!deletedQuestion) {
+            throw new CustomError(404, "Question not found");
+        }
+        return {
+            question: deletedQuestion,
+            msg: "Question deleted successfully",
             success: true,
         }
     }

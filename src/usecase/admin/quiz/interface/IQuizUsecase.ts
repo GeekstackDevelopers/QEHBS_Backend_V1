@@ -11,6 +11,8 @@ export interface IQuizzesReponse extends IApiResponse {
 export interface IQuizUseCase {
     createQuiz(quiz: IQuiz, file?: any): Promise<IQuizResponse>;
     getQuizzesByCourseId(courseId: string): Promise<IQuizzesReponse>;
+    getAllQuizes(): Promise<IQuizzesReponse>;
+    publishQuiz(quizId: string): Promise<IQuizResponse>;
     getQuizById(quizId: string): Promise<IQuizResponse>;
     getQuizzesByCourseIdAndWeekNumber(
         courseId: string,

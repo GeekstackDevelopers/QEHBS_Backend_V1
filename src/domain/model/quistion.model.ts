@@ -42,6 +42,11 @@ const questionSchema = new Schema<IQuestion>(
       required: true,
       index: true,
     },
+    explanation: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     correctOption: {
       type: String,
       required: true,

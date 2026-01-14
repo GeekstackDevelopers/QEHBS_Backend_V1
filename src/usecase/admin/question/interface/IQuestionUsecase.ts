@@ -13,5 +13,7 @@ export interface IQuestionsResponse extends IApiResponse {
 export interface IQuestionUsecase {
     createQuestion(question: IQuestion): Promise<IQuestionResponse>
     getByCourseId(courseId: string): Promise<IQuestionsResponse>
+    deleteQuestion(questionId: string): Promise<IQuestionResponse>
+    updateQuestion(questionId: string, question: Partial<IQuestion>): Promise<IQuestionResponse>
     getByQuizId(quizId: string): Promise<IQuestionsResponse>
 }

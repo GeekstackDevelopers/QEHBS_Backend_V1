@@ -18,4 +18,14 @@ export class QuestionController {
         const response = await this.questionUsecase.getByQuizId(quizId);
         res.status(200).json(response);
     })
+    updateQuestion = asyncHandler(async (req: Request, res: Response) => {
+        const { questionId } = req.params;
+        const response = await this.questionUsecase.updateQuestion(questionId, req.body);
+        res.status(200).json(response);
+    })
+    deleteQuestion = asyncHandler(async (req: Request, res: Response) => {
+        const { questionId } = req.params;
+        const response = await this.questionUsecase.deleteQuestion(questionId);
+        res.status(200).json(response);
+    })
 }

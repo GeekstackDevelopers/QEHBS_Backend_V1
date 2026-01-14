@@ -12,11 +12,18 @@ const quizController = new QuizController(quizUsecase);
 const quizRouter = Router();
 
 quizRouter.post(
-  "/",
+  "/create",
   quizThumbnailImageUpload,
   quizController.createQuiz.bind(quizController)
 );
-
+quizRouter.patch(
+  "/publish/:id",
+  quizController.publishQuiz.bind(quizController)
+)
+quizRouter.get(
+  "/",
+  quizController.getAllQuizzes.bind(quizController)
+);
 quizRouter.get(
   "/id/:id",
   quizController.getQuizById.bind(quizController)
